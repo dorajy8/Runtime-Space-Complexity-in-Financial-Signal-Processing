@@ -54,3 +54,55 @@ class WindowedMovingAverageStrategy(Strategy):
         elif tick.price < avg_price:
             return ["SELL"]
         return []
+    
+import numpy as np # Make sure to pip install numpy
+from models import Strategy, MarketDataPoint
+
+class NumpyMovingAverageStrategy(Strategy):
+    """
+    Optimization: Vectorized Operations.
+    Instead of processing tick-by-tick (streaming), we process a bulk array.
+    
+    Time Complexity: O(1) effective per element due to C-level optimizations in Numpy.
+    Space Complexity: O(N) to store the arrays, but much more compact than Python lists.
+    """
+    def __init__(self, window_size: int):
+        self.window_size = window_size
+        self.prices = [] 
+
+    def generate_signals(self, tick: MarketDataPoint) -> list:
+        # load the whole CSV into a numpy array 
+        self.prices.append(tick.price)
+        
+        if len(self.prices) < self.window_size:
+            return []
+            
+        # CONVERT TO NUMPY (Expensive if done every tick, efficient if done once at end)
+        price_array = np.array(self.prices[-self.window_size:])
+        
+        # Numpy mean is highly optimized
+        avg_price = np.mean(price_array)
+        
+        if tick.price > avg_price:
+            return ["BUY"]
+        elif tick.price < avg_price:
+            return ["SELL"]
+        return []
+
+# Optimization Memory
+from functools import lru_cache
+class MemoizedStrategy(Strategy):
+    """
+    Demonstrates lru_cache. 
+    Useful when heavy calculation logic that repeated for specific price levels.
+    """
+    def generate_signals(self, tick: MarketDataPoint) -> list:
+        return self._heavy_calculation(tick.price)
+
+    @lru_cache(maxsize=128)
+    def _heavy_calculation(self, price: float) -> list:
+        # Pretend this is a very expensive math operation
+        # If we see the same price twice, the result is returned instantly from cache.
+        if price % 2 == 0:
+            return ["BUY"]
+        return []   
