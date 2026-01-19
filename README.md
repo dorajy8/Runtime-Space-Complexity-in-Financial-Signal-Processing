@@ -1,7 +1,7 @@
 # Runtime-Space-Complexity-in-Financial-Signal-Processing
 Homework 2 for Real time Intelligence Systems
 
-This project implements a high-performance market data processing pipeline in Python. It demonstrates the differences in algorithmic complexity between a Naive approach ($O(N)$) and an Optimized Windowed approach ($O(1)$). It also explores system-level optimizations like Generator Streaming to minimize memory footprint.
+This project implements a high-performance market data processing pipeline in Python. It demonstrates the differences in algorithmic complexity between a Naive approach (O(N)) and an Optimized Windowed approach (O(1)). It also explores system-level optimizations like Generator Streaming to minimize memory footprint.
 
 ## File Structure
 File Description:  
