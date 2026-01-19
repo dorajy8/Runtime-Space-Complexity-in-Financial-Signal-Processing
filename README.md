@@ -12,7 +12,7 @@ reporting.py Generates plots (matplotlib) and the markdown complexity report.
 main.py runs ingestion, strategies, and profiling.
 tests/Unit tests validating strategy correctness and performance constraints.
 
-## Setup & Usage1. 
+## Setup & Usage
 Prerequisites:
 Ensure you have Python 3.10+ installed. 
 1. Install the required dependencies:Bashpip install matplotlib memory_profiler numpy
