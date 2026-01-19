@@ -4,7 +4,7 @@ Homework 2 for Real time Intelligence Systems
 This project implements a high-performance market data processing pipeline in Python. It demonstrates the differences in algorithmic complexity between a Naive approach ($O(N)$) and an Optimized Windowed approach ($O(1)$). It also explores system-level optimizations like Generator Streaming to minimize memory footprint.
 
 ## File Structure
-FileDescription:  
+File Description:  
 
 data_loader.py handles CSV parsing, Dataclass creation, and Generator streaming.  
 
