@@ -21,8 +21,9 @@ tests/Unit tests validating strategy correctness and performance constraints.
 
 ## Setup & Usage
 Prerequisites:
-Ensure you have Python 3.10+ installed. 
-1. Install the required dependencies:Bashpip install matplotlib memory_profiler numpy
-2. Generate DataCreate the dummy market data CSV:Bashpython generate_data.py
-3. Run the Main PipelineThis runs the ingestion, profiling, and report generation:Bashpython main.py
-Output: Generates complexity_report.md, runtime_plot.png, and memory_plot.png.4. Run Unit TestsBashpython -m unittest discover tests
+Ensure have Python 3.10+ installed. 
+1. Install the required dependencies: Bashpip install matplotlib memory_profiler numpy
+2. Downloaded data from "sudalairajkumar/cryptocurrencypricehistory" Kaggle "coin_Bitcoin.csv" and in this project refered as "market_data.csv"
+3. Run the Main Pipeline (python main.py)
+Output: Generates complexity_report.md, runtime_plot.png, and memory_plot.png.
+4. Run Unit Tests (python -m unittest discover tests)
