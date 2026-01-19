@@ -5,12 +5,18 @@ This project implements a high-performance market data processing pipeline in Py
 
 ## File Structure
 FileDescription:
-data_loader.py Handles CSV parsing, Dataclass creation, and Generator streaming.
-models.py Defines the immutable MarketDataPoint (frozen dataclass) and Strategy interface.
-strategies.py Implements NaiveMovingAverageStrategy and WindowedMovingAverageStrategy.profiler.py and measures Runtime and Peak Memory using timeit and memory_profiler.
-reporting.py Generates plots (matplotlib) and the markdown complexity report.
-main.py runs ingestion, strategies, and profiling.
-tests/Unit tests validating strategy correctness and performance constraints.
+data_loader.py Handles CSV parsing, Dataclass creation, and Generator streaming.  
+
+models.py Defines the immutable MarketDataPoint (frozen dataclass) and Strategy interface.  
+
+strategies.py Implements NaiveMovingAverageStrategy and WindowedMovingAverageStrategy.profiler.py and measures Runtime and Peak Memory using timeit and memory_profiler.  
+
+reporting.py Generates plots (matplotlib) and the markdown complexity report.  
+
+main.py runs ingestion, strategies, and profiling.  
+
+tests/Unit tests validating strategy correctness and performance constraints.  
+
 
 ## Setup & Usage
 Prerequisites:
